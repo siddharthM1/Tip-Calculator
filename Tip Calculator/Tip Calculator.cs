@@ -50,7 +50,7 @@ namespace Tip_Calculator
 
                 if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
                 {
-                    MessageBox.Show("please enter the amount in the bill box");
+                    MessageBox.Show("Please enter the bill amount in the bill box");
                 }
             }
             catch
@@ -72,7 +72,7 @@ namespace Tip_Calculator
                 if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
                 {
                     tipbox.Text = "0%";
-                    MessageBox.Show("please enter the amount in the bill box");
+                    MessageBox.Show("Please enter the bill amount in the bill box");
                 }
             }
             catch 
@@ -91,7 +91,7 @@ namespace Tip_Calculator
                 if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
                 {
                     peoplebox.Text = "0";
-                    MessageBox.Show("please enter the amount in the bill box");
+                    MessageBox.Show("Please enter the bill amount in the bill box");
                 }
             }
             catch
@@ -111,7 +111,7 @@ namespace Tip_Calculator
 
                 if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
                 {
-                    MessageBox.Show("please enter the amount in the bill box");
+                    MessageBox.Show("please enter the bill amount in the bill box");
                 }
             }
             catch
