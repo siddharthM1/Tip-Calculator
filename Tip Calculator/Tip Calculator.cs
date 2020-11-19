@@ -16,6 +16,20 @@ namespace Tip_Calculator
         {
             InitializeComponent();
         }
+        //this function is used for taking only numaric value in the bill text box
+        private void billbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
         //this function is used for changing the text in Bill box to empty
         private void billbox_Click(object sender, EventArgs e)
@@ -87,6 +101,7 @@ namespace Tip_Calculator
         {
             try
             {
+                
                 //to claculate the value of tip per person and the total per person every time the new value is entered in the bill text box
                 tipperpersonbox.Text = "$" + ((float.Parse(billbox.Text) / float.Parse(peoplebox.Text)) * float.Parse(tipbox.Text.Trim('%')) / 100).ToString("n");
                 totalperpersonbox.Text = "$" + ((float.Parse(tipperpersonbox.Text.Trim('$'))) + (float.Parse(billbox.Text) / float.Parse(peoplebox.Text))).ToString("n");
@@ -144,7 +159,5 @@ namespace Tip_Calculator
                 totalperpersonbox.Text = "$0.00";
             }
         }
-
-       
     }
 }

@@ -116,12 +116,13 @@ namespace Tip_Calculator
             this.billbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.billbox.Click += new System.EventHandler(this.billbox_Click);
             this.billbox.TextChanged += new System.EventHandler(this.billbox_TextChanged);
+            this.billbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.billbox_KeyPress);
             // 
             // peopleincrbutton
             // 
             this.peopleincrbutton.Location = new System.Drawing.Point(220, 234);
             this.peopleincrbutton.Name = "peopleincrbutton";
-            this.peopleincrbutton.Size = new System.Drawing.Size(27, 27);
+            this.peopleincrbutton.Size = new System.Drawing.Size(28, 28);
             this.peopleincrbutton.TabIndex = 6;
             this.peopleincrbutton.Text = "+";
             this.peopleincrbutton.UseVisualStyleBackColor = true;
@@ -130,7 +131,7 @@ namespace Tip_Calculator
             // peoplebox
             // 
             this.peoplebox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.peoplebox.Location = new System.Drawing.Point(39, 234);
+            this.peoplebox.Location = new System.Drawing.Point(40, 234);
             this.peoplebox.Margin = new System.Windows.Forms.Padding(0);
             this.peoplebox.Name = "peoplebox";
             this.peoplebox.ReadOnly = true;
@@ -144,7 +145,7 @@ namespace Tip_Calculator
             // 
             this.peopledecrbutton.Location = new System.Drawing.Point(12, 234);
             this.peopledecrbutton.Name = "peopledecrbutton";
-            this.peopledecrbutton.Size = new System.Drawing.Size(27, 27);
+            this.peopledecrbutton.Size = new System.Drawing.Size(28, 28);
             this.peopledecrbutton.TabIndex = 4;
             this.peopledecrbutton.Text = "-";
             this.peopledecrbutton.UseVisualStyleBackColor = true;
@@ -154,7 +155,7 @@ namespace Tip_Calculator
             // 
             this.tipincrbutton.Location = new System.Drawing.Point(220, 152);
             this.tipincrbutton.Name = "tipincrbutton";
-            this.tipincrbutton.Size = new System.Drawing.Size(27, 27);
+            this.tipincrbutton.Size = new System.Drawing.Size(28, 28);
             this.tipincrbutton.TabIndex = 3;
             this.tipincrbutton.Text = "+";
             this.tipincrbutton.UseVisualStyleBackColor = true;
@@ -163,7 +164,7 @@ namespace Tip_Calculator
             // tipbox
             // 
             this.tipbox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tipbox.Location = new System.Drawing.Point(39, 152);
+            this.tipbox.Location = new System.Drawing.Point(40, 152);
             this.tipbox.Margin = new System.Windows.Forms.Padding(0);
             this.tipbox.Name = "tipbox";
             this.tipbox.ReadOnly = true;
@@ -177,7 +178,7 @@ namespace Tip_Calculator
             // 
             this.tipdecrbutton.Location = new System.Drawing.Point(12, 152);
             this.tipdecrbutton.Name = "tipdecrbutton";
-            this.tipdecrbutton.Size = new System.Drawing.Size(27, 27);
+            this.tipdecrbutton.Size = new System.Drawing.Size(28, 28);
             this.tipdecrbutton.TabIndex = 1;
             this.tipdecrbutton.Text = "-";
             this.tipdecrbutton.UseVisualStyleBackColor = true;
