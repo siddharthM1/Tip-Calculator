@@ -47,6 +47,7 @@ namespace Tip_Calculator
             this.total1 = new System.Windows.Forms.Label();
             this.tip2 = new System.Windows.Forms.Label();
             this.tip1 = new System.Windows.Forms.Label();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,6 +79,7 @@ namespace Tip_Calculator
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitter1);
             this.splitContainer1.Panel2.Controls.Add(this.totalperpersonbox);
             this.splitContainer1.Panel2.Controls.Add(this.tipperpersonbox);
             this.splitContainer1.Panel2.Controls.Add(this.total2);
@@ -210,7 +212,7 @@ namespace Tip_Calculator
             // tipperpersonbox
             // 
             this.tipperpersonbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tipperpersonbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipperpersonbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tipperpersonbox.Location = new System.Drawing.Point(155, 102);
             this.tipperpersonbox.Multiline = true;
             this.tipperpersonbox.Name = "tipperpersonbox";
@@ -267,6 +269,14 @@ namespace Tip_Calculator
             this.tip1.Text = "Tip";
             this.tip1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 340);
+            this.splitter1.TabIndex = 6;
+            this.splitter1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,6 +316,7 @@ namespace Tip_Calculator
         private System.Windows.Forms.TextBox tipbox;
         private System.Windows.Forms.Button tipdecrbutton;
         private System.Windows.Forms.Label bill;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }
 

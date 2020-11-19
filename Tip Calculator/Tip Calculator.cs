@@ -37,14 +37,20 @@ namespace Tip_Calculator
             billbox.Text = "";
         }
 
-        //this function is used to decrease the tip percentage by 10
+        //this function is used to decrease the tip percentage by 10 and checks if the value in the bill text box is not enpty and grater than 0.
         private void Tipdecrbutton(object sender, EventArgs e)
         {
             try
             {
+                
                 if (int.Parse(tipbox.Text.Trim('%')) > 0)
                 {
                     tipbox.Text = (int.Parse(tipbox.Text.Trim('%')) - 10).ToString() + "%";
+                }
+
+                if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
+                {
+                    MessageBox.Show("please enter the amount in the bill box");
                 }
             }
             catch
@@ -52,14 +58,21 @@ namespace Tip_Calculator
 
             }
         }
-        //this function is used to increase the tip percentage by 10
+        //this function is used to increase the tip percentage by 10 and checks if the value in the bill text box is not enpty and grater than 0.
         private void Tipincrbutton(object sender, EventArgs e)
         {
             try
             {
+                
                 if (int.Parse(tipbox.Text.Trim('%')) < 100)
                 {
                     tipbox.Text = (int.Parse(tipbox.Text.Trim('%')) + 10).ToString() + "%";
+                }
+
+                if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
+                {
+                    tipbox.Text = "0%";
+                    MessageBox.Show("please enter the amount in the bill box");
                 }
             }
             catch 
@@ -68,19 +81,25 @@ namespace Tip_Calculator
             }
 
         }
-        //this function is used to increase the no of people by 1
+        //this function is used to increase the no of people by 1 and checks if the value in the bill text box is not enpty and grater than 0.
         private void peopleincrbutton_Click(object sender, EventArgs e)
         {
             try
             {
                 peoplebox.Text = (int.Parse(peoplebox.Text) + 1).ToString();
+
+                if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
+                {
+                    peoplebox.Text = "0";
+                    MessageBox.Show("please enter the amount in the bill box");
+                }
             }
             catch
             {
 
             }
         }
-        //this function is used to decrease the no of people by 1
+        //this function is used to decrease the no of people by 1 and checks if the value in the bill text box is not enpty and grater than 0.
         private void peopledecrbutton_Click(object sender, EventArgs e)
         {
             try
@@ -88,6 +107,11 @@ namespace Tip_Calculator
                 if (int.Parse(peoplebox.Text) > 0)
                 {
                     peoplebox.Text = (int.Parse(peoplebox.Text) - 1).ToString();
+                }
+
+                if ((string.IsNullOrWhiteSpace(billbox.Text)) || (float.Parse(billbox.Text) <= 0))
+                {
+                    MessageBox.Show("please enter the amount in the bill box");
                 }
             }
             catch
@@ -103,6 +127,7 @@ namespace Tip_Calculator
             {
                 
                 //to claculate the value of tip per person and the total per person every time the new value is entered in the bill text box
+
                 tipperpersonbox.Text = "$" + ((float.Parse(billbox.Text) / float.Parse(peoplebox.Text)) * float.Parse(tipbox.Text.Trim('%')) / 100).ToString("n");
                 totalperpersonbox.Text = "$" + ((float.Parse(tipperpersonbox.Text.Trim('$'))) + (float.Parse(billbox.Text) / float.Parse(peoplebox.Text))).ToString("n");
             }
@@ -118,6 +143,7 @@ namespace Tip_Calculator
             try
             {
                 //to claculate the value of tip per person and the total per person every time the new value is entered in the tip percentage box
+
                 tipperpersonbox.Text = "$" + ((float.Parse(billbox.Text) / float.Parse(peoplebox.Text)) * float.Parse(tipbox.Text.Trim('%')) / 100).ToString("n");
                 totalperpersonbox.Text = "$" + ((float.Parse(tipperpersonbox.Text.Trim('$'))) + (float.Parse(billbox.Text) / float.Parse(peoplebox.Text))).ToString("n");
             }
@@ -133,6 +159,7 @@ namespace Tip_Calculator
             try
             {
                 //to claculate the value of tip per person and the total per person every time the new value is entered in the No of perple box
+
                 tipperpersonbox.Text = "$" + ((float.Parse(billbox.Text) / float.Parse(peoplebox.Text)) * float.Parse(tipbox.Text.Trim('%')) / 100).ToString("n");
                 totalperpersonbox.Text = "$" + ((float.Parse(tipperpersonbox.Text.Trim('$'))) + (float.Parse(billbox.Text) / float.Parse(peoplebox.Text))).ToString("n");
             }
